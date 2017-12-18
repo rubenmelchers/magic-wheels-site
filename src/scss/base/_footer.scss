@@ -1,0 +1,37 @@
+.footer {
+	position: relative;
+	box-shadow: .1rem .1rem 1rem rgba($black, .5);
+
+	&__copyright {
+		font-size: 1rem;
+		padding: 1rem 0;
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: space-around;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: block;
+			position: relative;
+			padding: 2rem 0rem;
+			width: 25%;
+			text-align: center;
+			transition: 250ms;
+
+			&:hover {
+				background: darken($light, 10%);
+			}
+
+			a {
+				text-decoration: none;
+				color: darken($secondary, 10%);
+				text-transform: lowercase;
+			}
+		}
+
+	}
+}

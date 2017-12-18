@@ -1,0 +1,85 @@
+// @include fontloop(
+// 		$name: "opensans",
+// 		$weights: (300, 400, 600, 700, 800)
+// 	);
+
+// @include fontloop(
+// 		$name: "montserrat",
+// 		$weights: (100, 200, 300, 400, 500, 600, 700, 800, 900)
+// 	);
+
+$basefont: "opensans", sans-serif;
+$headerfont: "montserrat", sans-serif;
+
+p,
+span,
+div {
+	font-family: $basefont;
+	font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headerfont;
+	letter-spacing: .5rem;
+	line-height: 1.5;
+	font-weight: 900;
+}
+
+h1 {
+	font-size: 6rem;
+
+	@media screen and (max-width: $medium) {
+		font-size: 4rem;
+	}
+
+	@media screen and (max-width: $small) {
+		font-size: 3rem;
+	}
+
+	@media screen and (max-width: $extrasmall) {
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
+	}
+}
+
+h2 {
+	font-size: 5rem;
+
+	@media screen and (max-width: $medium) {
+		font-size: 3.5rem;
+	}
+
+	@media screen and (max-width: $small) {
+		font-size: 2.5rem;
+	}
+
+	@media screen and (max-width: $extrasmall) {
+		font-size: 2rem;
+		letter-spacing: 0.1rem;
+	}
+}
+
+h3 {
+	font-size: 4rem;
+
+	@media screen and (max-width: $medium) {
+		font-size: 3rem;
+	}
+
+	@media screen and (max-width: $small) {
+		font-size: 2rem;
+	}
+
+	@media screen and (max-width: $extrasmall) {
+		font-size: 1.6rem;
+		letter-spacing: 0.1rem;
+	}
+}
+
+h4 {
+	font-size: 3rem;
+}
+
+h5 {
+	font-size: 2rem;
+}

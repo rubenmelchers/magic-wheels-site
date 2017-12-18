@@ -1,0 +1,153 @@
+::selection {
+	background: rgba($black, .70);
+	color: $primary;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	background: darken($light, 2%);
+	box-sizing: border-box;
+	font-family: $basefont;
+	margin: 0;
+}
+
+div {
+	display: block;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@for $i from 0 through 10 {
+	.fadeInLeft--delay-#{$i} {
+		animation-delay: #{$i}s;
+	}
+
+	.fadeInRight--delay-#{$i} {
+		animation-delay: #{$i}s;
+	}
+
+	.fadeInUp--delay-#{$i} {
+		animation-delay: #{$i}s;
+	}
+
+	.fadeInDown--delay-#{$i} {
+		animation-delay: #{$i}s;
+	}
+}
+
+.fadeInLeft,
+.fadeInRight,
+.fadeInUp,
+.fadeInDown {
+	opacity: 0;
+
+	&--animate {
+		animation: {
+			duration: 1s;
+			fill-mode: forwards;
+		}
+	}
+
+	&--delay {
+
+		&-0-25 {
+			animation-delay: 0.25s;
+		}
+
+		&-0-5 {
+			animation-delay: 0.5s;
+		}
+
+		&-0-75 {
+			animation-delay: 0.75s;
+		}
+
+		&-1-25 {
+			animation-delay: 1.25s;
+		}
+
+		&-1-5 {
+			animation-delay: 1.5s;
+		}
+
+		&-1-75 {
+			animation-delay: 0.75s;
+		}
+
+		&-2-25 {
+			animation-delay: 2.25s;
+		}
+
+		&-2-5 {
+			animation-delay: 2.5s;
+		}
+
+		&-2-75 {
+			animation-delay: 0.75s;
+		}
+
+		&-3-25 {
+			animation-delay: 3.25s;
+		}
+
+		&-3-5 {
+			animation-delay: 3.5s;
+		}
+
+		&-3-75 {
+			animation-delay: 0.75s;
+		}
+
+		&-4-5 {
+			animation-delay: 4.5s;
+		}
+
+		&-4-75 {
+			animation-delay: 0.75s;
+		}
+	}
+}
+
+.fadeInLeft {
+
+	&--animate {
+		animation: {
+		name: fadeInLeft;
+		}
+	}
+}
+
+.fadeInRight {
+	&--animate {
+		animation: {
+		name: fadeInRight;
+		}
+	}
+}
+
+.fadeInUp {
+	&--animate {
+		animation: {
+		name: fadeInUp;
+		}
+	}
+}
+
+.fadeInDown {
+	&--animate {
+		animation: {
+		name: fadeInDown;
+		}
+	}
+}

@@ -1,0 +1,110 @@
+@mixin container-size() {
+	@if $fixed-grid {
+		width: $container-max-width; // Default value
+
+		@for $i from 1 through length($screen-sizes) {
+			$screen-size: nth($screen-sizes, $i);
+			$width: nth($screen-size, 2);
+			$media-width: get-prev-size($i);
+
+			@media (max-width: #{$media-width} - 1) {
+				@if $i == length($screen-sizes) and $fixed-grid-fluid-xs {
+					max-width: $width;
+				}
+				@else {
+					width: $width;
+				}
+			}
+		}
+	}
+	@else {
+		max-width: $container-max-width;
+	}
+}
+
+
+@mixin create-grid() {
+	// Default grid
+	@for $i from 1 through $grid-columns {
+		.#{$grid-class}-#{$i} { @include grid-base($i); }
+		.#{$grid-class}-push-#{$i} { @include grid-push($i); }
+		.#{$grid-class}-pull-#{$i} { @include grid-pull($i); }
+	}
+	.#{$grid-class}-full { padding: 0; }
+
+	// Breakpoints
+	@for $i from 1 through length($screen-sizes) {
+		$screen: nth($screen-sizes, $i);
+		$type: nth($screen, 1);
+		$media-width: nth($screen, 2);
+
+		@if $fixed-grid {
+			$media-width: get-prev-size($i);
+		}
+
+		@media (max-width: #{$media-width}) {
+			@for $i from 1 through $grid-columns {
+				.#{$grid-class}-#{$type}-#{$i} { @include grid-base($i); }
+				.#{$grid-class}-#{$type}-push-#{$i} { @include grid-push($i); }
+				.#{$grid-class}-#{$type}-pull-#{$i} { @include grid-pull($i); }
+			}
+			.#{$grid-class}-#{$type}-push-0 { @include grid-push(0); }
+			.#{$grid-class}-#{$type}-pull-0 { @include grid-pull(0); }
+			.#{$grid-class}-#{$type}-full { padding: 0; }
+		}
+	}
+}
+
+@mixin grid-base($i) {
+	width: percentage($i / $grid-columns);
+}
+
+@mixin grid-push($i) {
+	margin-left: percentage($i / $grid-columns);
+}
+
+@mixin grid-pull($i) {
+	margin-left: - percentage($i / $grid-columns);
+}
+
+
+
+@function get-prev-size($i) {
+	@if $i == 1 {
+		@return $container-max-width;
+	}
+	$prev-screen-size: nth($screen-sizes, $i - 1);
+	@return nth($prev-screen-size, 2);
+}
+
+@function smallest-bp() {
+	$screen: nth($screen-sizes, length($screen-sizes));
+	@return nth($screen, 1);
+}
+
+
+@mixin mediaquery($point) {
+	$size: map-get($screen-sizes, $point);
+	@if $size == null {
+		$size: $point;
+	}
+	// $size: $point;
+	// @each $screen in $screen-sizes {
+	// 	@if nth($screen, 1) == $point {
+	// 		$size: nth($screen, 2);
+	// 	}
+	// }
+
+	@media (max-width: $size) { @content }
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

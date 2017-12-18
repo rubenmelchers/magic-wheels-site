@@ -1,0 +1,18 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 900;
+	pointer-events: none;
+
+	#header {
+		background: none;
+	}
+
+	#logo {
+		position: relative;
+		z-index: 5;
+		pointer-events: all;
+	}
+}
