@@ -1,12 +1,13 @@
 {
-  "name": "kruzacollaborations",
+  "name": "magic wheels",
   "version": "0.0.1",
-  "description": "kruzacollaborations repo",
+  "description": "magic wheels repo",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
     "flexboxgrid-sass": "^8.0.5",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",

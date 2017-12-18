@@ -8,7 +8,8 @@ var gulp = require("gulp"),
 	autoprefixer = require("gulp-autoprefixer"),
 	sourcemaps = require("gulp-sourcemaps"),
 	csso = require("gulp-csso"),
-	babel = require("gulp-babel");
+	babel = require("gulp-babel"),
+	browserSync = require('browser-sync').create();
 
 
 /* NAME OF PROJECT HERE */
@@ -16,7 +17,7 @@ var project = "magicwheels";
 
 var path = {
 	sasssrc: ["src/scss/**/*.scss"],
-	sassdest: "dist",
+	sassdest: "dist/css",
 
 	scriptsrc: [
 		"src/script/hamburger.js",
@@ -42,6 +43,7 @@ gulp.task("sass", function() {
 		}))
 		.pipe(concat(project + '.css'))
 		.pipe(gulp.dest(path.sassdest))
+		.pipe(browserSync.stream());
 });
 
 gulp.task("scripts", function() {
@@ -50,12 +52,13 @@ gulp.task("scripts", function() {
 	            presets: ['env']
 	        }))
 		.pipe(sourcemaps.init())
-		.pipe(concat(project + '.min.js'))
+		.pipe(concat('main.min.js'))
 		.pipe(uglify().on('error', function(e) {
 			console.log(e);
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.scriptdest))
+		.pipe(browserSync.reload())
 });
 
 gulp.task("images", function() {
@@ -66,10 +69,24 @@ gulp.task("images", function() {
 		.pipe(gulp.dest(path.imgdest)))
 });
 
-gulp.task("watch", function() {
+gulp.task("browsersync", function() {
+	browserSync.init({
+		server: "./dist",
+		open: "external"
+		// host: project + ".dev"
+		// proxy: project + ".dev"
+		// port: 3131
+	});
+});
+
+gulp.task("watch", ["browsersync"], function() {
+
 	gulp.watch(path.sasssrc, ["sass"]);
 	gulp.watch(path.scriptsrc, ["scripts"]);
 	gulp.watch(path.imgsrc, ["images"]);
+
+	gulp.watch("dist/**/*.html").on('change', browserSync.reload);
+
 });
 
 gulp.task('default', ['watch'] );
