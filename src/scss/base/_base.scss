@@ -13,7 +13,7 @@ html, body {
 
 body {
 	position: relative;
-	background: darken($light, 2%);
+	background: $white;
 	box-sizing: border-box;
 	font-family: $basefont;
 	margin: 0;
@@ -150,4 +150,29 @@ div {
 		name: fadeInDown;
 		}
 	}
+}
+
+img {
+	vertical-align: middle;
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+.rounded {
+    border-radius: .25rem;
+}
+
+.relative {
+	position: relative;
 }

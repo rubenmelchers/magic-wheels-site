@@ -2,14 +2,16 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
 	width: 100%;
 	z-index: 10;
-	background: $light;
-	box-shadow: .1rem .1rem 1rem rgba($black, .5);
-
-	@include fadeInDown(
-		$duration: 2s
-		);
+	
+	padding: 20px 20px 0px 20px;
+	// background: $light;
+	// box-shadow: .1rem .1rem 1rem rgba($black, .5);
+	transition: background .3s ease;
+	
+	@include fadeInDown($duration: 1s);
 
 	&__wrapper {
 		padding: 0;
@@ -40,14 +42,19 @@
 				transform: translate(-50%, -50%);
 				text-decoration: none;
 				text-transform: uppercase;
-				color: darken($secondary, 10%);
-				font-size: 1.6rem;
+				color: $white;
+				font-size: 1.2rem;
 			}
 
 			&:hover {
-				background: darken($light, 10%);
+				// background: darken($light, 10%);
 			}
 		}
+	}
+	
+	&__scrolling {
+		background: rgba(102, 219, 244, .50);
+		border-radius: 0px 0px 5px 5px;
 	}
 
 }

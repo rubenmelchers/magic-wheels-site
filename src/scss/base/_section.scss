@@ -1,0 +1,156 @@
+.section {
+	$root: &;
+	
+	position: relative;
+	padding: 40px 0;
+	
+	p {
+		font-size: 1rem;
+		line-height: 23px;
+	}	
+	
+	&--header {
+		padding-top: 130px;
+	}
+	
+	&--assignment {
+		padding: 120px 0 220px 0;
+		margin-bottom: 30px;
+	}
+	
+	&--disney-background {
+		
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		background-image: url('../images/bg.jpg');
+		
+		color: $white;
+	}
+	
+	&--children-background {
+		height: 360px; 
+		
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right top;
+		background-image: url('../images/section_children.jpg');
+		
+	}
+	
+	&--blue-background {
+		
+		background: $light-blue;
+		color: $white;
+		
+		#{$root}__title {
+			color: $white;
+		}
+		
+	}
+		
+	&__header-title, &__header-subtitle {
+		font-family: $headerfont;
+		color: $white;
+	}
+	
+	&__header-title {
+		font-size: 5rem;
+	}
+	
+	&__header-subtitle {
+		line-height: 22px;
+		font-size: 1.7rem;
+		
+		&--reset-lineheight {
+			line-height: normal;	
+		}
+	}
+	
+	&__title {
+		font-family: $basefont_bold;
+		font-size: 3rem;
+		color: $light-blue;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	
+	&__subtitle {
+		font-family: $basefont;
+		font-size: 1rem;
+		text-transform: uppercase;
+		margin: 0;
+		
+		&--team {
+			position: relative;
+			bottom: 13px;
+			right: 31px;
+		}
+	}
+		
+	&__content {
+		
+		#{$root}__title {
+			margin: 30px 0 10px 0;
+			font-size: 1.6rem;
+			color: $black;
+		}
+		
+		p {
+			font-size: 1rem;
+			line-height: 23px;
+		}
+		
+	}
+	
+	&__quote {
+		
+		font-style: italic;
+		line-height: 2.3rem;
+		margin: 0;
+		
+	}
+	
+	&__title-header {
+		
+		margin-top: 40px;
+		
+	}
+	
+	&__profile {
+		
+		text-align: center;
+		padding: 0 60px;
+		margin: 50px 0;
+		
+	}
+	
+	&__profile-title {
+		
+		font-family: $basefont_bold;
+		font-size: 1rem;
+		
+		margin-top: 20px;
+		
+	}
+	
+	&__profile-function {
+		
+		font-family: $basefont;
+		font-size: 1rem;
+		text-transform: none;
+		
+		margin-top: 8px;
+		letter-spacing: 0.5px;
+		
+	}
+	
+	&__col-heavy-padding {
+		padding: 0px 75px;
+		margin: 30px 0;
+	}
+	
+	&__proxima {
+		font-family: $basefont;
+	}	
+}

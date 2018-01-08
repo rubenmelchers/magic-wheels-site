@@ -14,8 +14,38 @@
     	fill-mode: forwards;
     	duration: 1.5s;
     }
-
-
+    
+    &__bottom-centered {
+        position: absolute;
+        width: 100%;
+        
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    
+    &__target-audience {
+        position: absolute;
+        
+        width: 20px;
+        bottom: 0;
+        left: 130px;
+        top: 110px;
+        
+        text-align: left;
+    }
+    
+    &__arrow-down {        
+        animation: {
+			name: fadeInDown;
+			duration: 2s;
+			delay: 1s;
+			function: $easeInOutCubic;
+			iteration-count: infinite;
+		}
+    }
+    
 	&__link {
 		position: absolute;
 		width: 100%;

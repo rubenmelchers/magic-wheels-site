@@ -7,9 +7,13 @@
 // 		$name: "montserrat",
 // 		$weights: (100, 200, 300, 400, 500, 600, 700, 800, 900)
 // 	);
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
 
-$basefont: "opensans", sans-serif;
-$headerfont: "montserrat", sans-serif;
+$basefont: 'Proxima Nova', Georgia, sans-serif;
+$basefont_bold: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+$basefont_thin: 'proxima_nova_scosfthin', Georgia, sans-serif;
+
+$headerfont: 'Francois One', sans-serif;;
 
 p,
 span,
@@ -20,9 +24,8 @@ div {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $headerfont;
-	letter-spacing: .5rem;
+	letter-spacing: normal;
 	line-height: 1.5;
-	font-weight: 900;
 }
 
 h1 {
