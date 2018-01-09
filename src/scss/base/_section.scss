@@ -5,7 +5,7 @@
 	padding: 40px 0;
 	
 	p {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		line-height: 23px;
 	}	
 	
@@ -28,7 +28,7 @@
 		color: $white;
 	}
 	
-	&--children-background {
+	&--children-background {		
 		height: 360px; 
 		
 		background-repeat: no-repeat;
@@ -38,15 +38,8 @@
 		
 	}
 	
-	&--blue-background {
-		
-		background: $light-blue;
-		color: $white;
-		
-		#{$root}__title {
-			color: $white;
-		}
-		
+	&--front-layer {
+		z-index: 1;
 	}
 		
 	&__header-title, &__header-subtitle {
@@ -97,7 +90,7 @@
 		}
 		
 		p {
-			font-size: 1rem;
+			font-size: 1.1rem;
 			line-height: 23px;
 		}
 		
@@ -148,6 +141,51 @@
 	&__col-heavy-padding {
 		padding: 0px 75px;
 		margin: 30px 0;
+	}
+	
+	&__middle-images {
+		margin-top: 110px;	
+	}
+	
+	&__col-middle-image {
+		padding: 0;
+		
+		&:nth-child(2) {
+			position: absolute;
+			max-width: 37%;
+		}	
+	}
+	
+	&__video {
+		margin: 40px auto 30px auto;
+	}
+	
+	&__typography {
+		font-family: $headerfont;
+		
+		#{$root}__title {
+			font-size: 36px;
+			text-transform: none;
+			margin-bottom: 0;
+		}
+		
+		p {
+			font-size: 25px;
+			letter-spacing: 0.42px;
+			font-weight: 700;
+			margin: 0;
+		}
+	}
+	
+	&--blue-background {
+		
+		background: $light-blue;
+		color: $white;
+		
+		#{$root}__title {
+			color: $white;
+		}
+		
 	}
 	
 	&__proxima {
