@@ -58,7 +58,7 @@ gulp.task("scripts", function() {
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.scriptdest))
-		.pipe(browserSync.reload())
+		// .pipe(browserSync.reload())
 });
 
 gulp.task("images", function() {

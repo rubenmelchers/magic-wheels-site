@@ -5,12 +5,13 @@
 	right: 0;
 	width: 100%;
 	z-index: 10;
-	
-	padding: 20px 20px 0px 20px;
+
+	// padding: 20px 20px 0px 20px;
+	padding: 1rem 2rem;
 	// background: $light;
 	// box-shadow: .1rem .1rem 1rem rgba($black, .5);
-	transition: background .3s ease;
-	
+	// transition: width $transition;
+
 	@include fadeInDown($duration: 1s);
 
 	&__wrapper {
@@ -51,10 +52,55 @@
 			}
 		}
 	}
-	
+
 	&__scrolling {
 		background: rgba(102, 219, 244, .50);
 		border-radius: 0px 0px 5px 5px;
+	}
+
+	&__parent {
+		height: 100%;
+	}
+
+	.img-fluid {
+		// transition: 250ms $easeInOutCubic;
+		height: 100%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		// transition: 500ms $easeInOutCubic;
+
+	}
+
+	&--small {
+		// max-width: 100%;
+		// margin: 0 auto;
+		background: $light-blue;
+		height: 5rem;
+		padding: 0rem 2rem;
+
+		.navigation {
+
+			&__brand {
+				padding: .5rem 0;
+			}
+
+			&__menu-parent {
+				padding: 0;
+			}
+
+			&__menu {
+				height: 100%;
+
+				li {
+					height: 100%;
+
+					a {
+						line-height: 5rem;
+					}
+				}
+			}
+		}
 	}
 
 }

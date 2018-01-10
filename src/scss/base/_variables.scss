@@ -16,6 +16,7 @@ $media-xxxs: 320px;
 $transitionspeed: 250ms;
 $transitionspeedslower: 500ms;
 
+
 /************************/
 /* 		COLOR 			*/
 /************************/
@@ -78,3 +79,6 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $easeInOutFast: cubic-bezier(1,0,0,1);
 
 $authenticMotion: cubic-bezier(.4,0,.2,1);
+
+
+$transition: 150ms $easeInOutCubic;
