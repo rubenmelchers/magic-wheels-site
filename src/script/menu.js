@@ -27,12 +27,8 @@
 
         if(offset >= maxNavPos) {
             menu.classList.add('navigation--small');
-            menu.classList.remove('container');
-            navParent.classList.add('container');
         } else {
             menu.classList.remove('navigation--small');
-            menu.classList.add('container');
-            navParent.classList.remove('container');
         };
         // console.log("scrolling");
 

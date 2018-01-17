@@ -10,7 +10,9 @@
 	padding: 1rem 2rem;
 	// background: $light;
 	// box-shadow: .1rem .1rem 1rem rgba($black, .5);
-	// transition: width $transition;
+	// transition: 250ms $easeInOutCubic;
+	transition: 250ms;
+	height: 9rem;
 
 	@include fadeInDown($duration: 1s);
 
@@ -63,13 +65,14 @@
 	}
 
 	.img-fluid {
-		// transition: 250ms $easeInOutCubic;
 		height: 100%;
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
-		// transition: 500ms $easeInOutCubic;
+	}
 
+	&__brand {
+		padding: 0 0rem 1rem;
 	}
 
 	&--small {
