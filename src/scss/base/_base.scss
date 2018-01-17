@@ -176,3 +176,11 @@ img {
 .relative {
 	position: relative;
 }
+
+.box-shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
+
+.drive-viewer .drive-viewer-video-play-icon:not(:link):not(:visited) {
+	background-image: url('http://localhost:3000/img/Playbutton.png') !important;
+}

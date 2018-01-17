@@ -10,12 +10,12 @@
 	}
 
 	&--header {
-		padding-top: 130px;
-		padding-bottom: 200px;
+		padding-top: 180px;
 	}
 
 	&--assignment {
-		padding: 120px 0 220px 0;
+		padding: 0 0 220px 0;
+		// padding: 120px 0 220px 0;
 		margin-bottom: 30px;
 	}
 
@@ -83,10 +83,16 @@
 	}
 
 	&__intro-image {
-		max-width: 684px;
-		max-height: 513px;
-		width: 90%;
+		// max-width: 684px;
+		// max-height: 513px;
+		// width: 90%;
 		// height: 100%;
+	}
+	
+	&__header-block {
+		position: relative;
+	    top: 40px;
+	    right: 60px;
 	}
 
 	&__content {
@@ -113,9 +119,10 @@
 	}
 
 	&__content-results {
-		column-count: 2;
-		column-gap: 4rem;
-		text-align: left;
+		// column-count: 2;
+		// column-gap: 4rem;
+		// text-align: left;
+		text-align: center;
 	}
 
 	&__quote {
@@ -129,13 +136,16 @@
 	&__title-header {
 
 		margin-top: 40px;
-
+		
+		&--no-margin {
+			margin-top: 0;
+		}
 	}
 
 	&__profile {
 
 		text-align: center;
-		margin: 50px 0;
+		margin: 50px 0 0 0;
 
 	}
 
